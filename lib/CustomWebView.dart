@@ -30,7 +30,7 @@ class _CustomWebViewState extends State<CustomWebView> {
     _controller =
         WebViewController()
           ..setJavaScriptMode(JavaScriptMode.unrestricted)
-          ..loadRequest(Uri.parse('https://your-website.com')) // 替换为您的网址
+          ..loadRequest(Uri.parse(widget.gameUrl))
           ..addJavaScriptChannel(
             'pay',
             onMessageReceived: (message) {
