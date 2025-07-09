@@ -110,6 +110,15 @@ class _CustomWebViewState extends State<CustomWebView> {
             child: WebViewWidget(controller: _controller),
           ),
 
+          // test update Coin js
+          Positioned(
+            bottom: 0,
+            child:
+            TextButton(onPressed: ()=>{
+              _controller.runJavaScript("updateCoin();"),
+            }, child: const Icon(Icons.payment_rounded),
+            ),
+          ),
           if (_isLoading) const Center(child: CircularProgressIndicator()),
         ],
       ),
