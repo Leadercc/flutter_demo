@@ -30,7 +30,6 @@ class _CustomWebViewState extends State<CustomWebView> {
     _controller =
         WebViewController()
           ..setJavaScriptMode(JavaScriptMode.unrestricted)
-          ..loadRequest(Uri.parse(widget.gameUrl))
           ..addJavaScriptChannel(
             'pay',
             onMessageReceived: (message) {
@@ -65,7 +64,8 @@ class _CustomWebViewState extends State<CustomWebView> {
                 // debugPrint('page error: ${error.description}');
               },
             ),
-          );
+          )
+          ..loadRequest(Uri.parse(widget.gameUrl));
   }
 
   /// call updateCoin
