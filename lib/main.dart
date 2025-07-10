@@ -1,7 +1,7 @@
 import 'package:demo/CustomWebView.dart';
 import 'package:flutter/material.dart';
 
-const gameURL = "http://gztest.leadercc.com/app.html";
+const gameURL = "https://gztest.leadercc.com/app.html";
 
 void main() {
   runApp(const MyApp());
@@ -35,6 +35,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    String uid ="test_uid";
+    String token = "test_token";
+    String lang = "en-US";
+    String url = '${gameURL}?uid=${uid}&token=${token}&lang=${lang}';
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -51,8 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                     builder:
-                        (context) => const CustomWebView(
-                          gameUrl: gameURL,
+                        (context) => CustomWebView(
+                          gameUrl: url,
                           screenMode: 'full',
                         ),
                   ),
@@ -76,8 +80,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                     builder:
-                        (context) => const CustomWebView(
-                          gameUrl: gameURL,
+                        (context) => CustomWebView(
+                          gameUrl: url,
                           screenMode: 'hd',
                         ),
                   ),
@@ -101,8 +105,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                     builder:
-                        (context) => const CustomWebView(
-                          gameUrl: gameURL,
+                        (context) => CustomWebView(
+                          gameUrl: url,
                           screenMode: 'half',
                         ),
                   ),
